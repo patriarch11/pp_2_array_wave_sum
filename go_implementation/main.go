@@ -6,7 +6,7 @@ import (
 	"runtime"
 )
 
-const SliceLength = 10
+const SliceLength = 7
 
 func NewSlice() []int {
 	a := make([]int, SliceLength)
@@ -30,7 +30,7 @@ func add(start int, slice *[]int) int {
 
 	if !isLengthEven {
 		/*
-		* якщо довжина слайсу - це непарне число,
+		* якщо довжина слайса - це непарне число,
 		* а стартовий індекс знаходиться посередині,
 		* то повертаємо число, яке знаходиться на стартовому індексі
 		 */
@@ -64,7 +64,7 @@ func main() {
 	numCPUs := runtime.NumCPU()
 	slice := NewSlice()
 
-	fmt.Printf("Максимальна к-ть потіків, для оптимальної роботи: %d\n", numCPUs)
+	fmt.Printf("Максимальна к-ть потоків, для оптимальної роботи: %d\n", numCPUs)
 	fmt.Printf("Довжина слайсу: %d\n", SliceLength)
 	fmt.Printf("Слайс: %+v\n", slice)
 	fmt.Printf("Синхронно порахований результат: %d\n", sum(slice))
